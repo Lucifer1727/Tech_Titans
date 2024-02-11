@@ -3,29 +3,6 @@
   background-image: url("./Images/bg.jpg");
 }
 
-.dropdownprofile
-{
-  position:absolute;
-  top:4.5em;
-  right: 4rem;
-  width:120px;
-  padding:15px;
-  border-radius: 15px;
-  background-color: white;
-  border:1px solid gray;
-}
-.dropdownprofile::before
-{
-  content: '';
-  position: absolute;
-  top:-0.7rem;
-  right:1.1rem;
-  width:25px;
-  height:25px;
-  transform: rotate(45deg);
-  background-color: #F8CB1E;
-  border-left: 1px solid gray;
-}
 .clinical
 {
   font-family: 'Raleway', sans-serif;
@@ -41,6 +18,24 @@
   line-height:24px; 
   font-weight:600;
   font-size: 14px;
+}
+.cognitive
+{
+  font-family: 'Raleway', sans-serif;
+  color:#0265FD;
+  line-height:30px; 
+  font-weight:900;
+  font-size: 60px;
+
+}
+
+.font
+{
+  font-family: 'Raleway' , sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #0b1e59;
+  line-height: 24px;
 }
 /* App.css */
 
@@ -59,10 +54,14 @@
   /* Styles for screens up to 480px width */
   /* Adjust font sizes, margins, or any other styles for smaller screens */
 }
-
 /* App.css */
 
 img {
   max-width: 100%;
   height: auto; /* Maintain aspect ratio */
+}
+
+.drop
+{
+  font-family: 'Raleway', sans-serif;
 }
