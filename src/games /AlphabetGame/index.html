@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Mini Projects</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            color: yellowgreen;
+            font-family: 'Poppins', 'sans-serif';
+        }
+        
+        #entireSectionOuter {
+            margin-top: 100px;
+        }
+        
+        .wrapper {
+            background-color: yellow;
+        }
+        
+        .alphabetOuter ul {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            grid-gap: 9px;
+        }
+        
+        .alphabetOuter ul li {
+            list-style: none;
+            background-color: #040496;
+            color: #fff;
+            padding: 10px 31px;
+            min-width: 97px;
+            font-size: 2rem;
+            text-align: center;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+        
+        .resultSection {
+            text-align: center;
+        }
+        
+        .resultSection img {
+            width: 80%;
+            border: 1px solid #d8d2d2;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="container" id="entireSectionOuter">
+            <div class="row">
+                <div class="col-8">
+                    <div class="searchSection">
+                        <input type="text" onkeyup="changeImg(this.value)" placeholder="Search.." class="form-control mb-3">
+                    </div>
+                    <div class="alphabetOuter">
+                        <ul>
+                            <li onclick="changeImg('a');playSound('a')">A</li>
+                            <li onclick="changeImg('b');playSound('b')">B</li>
+                            <li onclick="changeImg('c');playSound('c')">C</li>
+                            <li onclick="changeImg('d');playSound('d')">D</li>
+                            <li onclick="changeImg('e');playSound('e')">E</li>
+                            <li onclick="changeImg('f');playSound('f')">F</li>
+                            <li onclick="changeImg('g');playSound('g')">G</li>
+                            <li onclick="changeImg('h');playSound('h')">H</li>
+                            <li onclick="changeImg('i');playSound('i')">I</li>
+                            <li onclick="changeImg('j');playSound('j')">J</li>
+                            <li onclick="changeImg('k');playSound('k')">K</li>
+                            <li onclick="changeImg('l');playSound('l')">L</li>
+                            <li onclick="changeImg('m');playSound('m')">M</li>
+                            <li onclick="changeImg('n');playSound('n')">N</li>
+                            <li onclick="changeImg('o');playSound('o')">O</li>
+                            <li onclick="changeImg('p');playSound('p')">P</li>
+                            <li onclick="changeImg('q');playSound('q')">Q</li>
+                            <li onclick="changeImg('r');playSound('r')">R</li>
+                            <li onclick="changeImg('s');playSound('s')">S</li>
+                            <li onclick="changeImg('t');playSound('t')">T</li>
+                            <li onclick="changeImg('u');playSound('u')">U</li>
+                            <li onclick="changeImg('v');playSound('v')">V</li>
+                            <li onclick="changeImg('w');playSound('w')">W</li>
+                            <li onclick="changeImg('x');playSound('x')">X</li>
+                            <li onclick="changeImg('y');playSound('y')">Y</li>
+                            <li onclick="changeImg('z');playSound('z')">Z</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="resultSection">
+                        <img src="img/default.jpg" id="output" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function changeImg(x) {
+            let txt = x.toLowerCase();
+            let imgPath;
+            switch (txt) {
+                case "a":
+                    imgPath = "a.jpg";
+                    break;
+                case "b":
+                    imgPath = "b.jpg";
+                    break;
+                case "c":
+                    imgPath = "c.jpg";
+                    break;
+                case "d":
+                    imgPath = "d.jpg";
+                    break;
+                case "e":
+                    imgPath = "e.jpg";
+                    break;
+                case "f":
+                    imgPath = "f.jpg";
+                    break;
+                case "g":
+                    imgPath = "g.jpg";
+                    break;
+                case "h":
+                    imgPath = "h.jpg";
+                    break;
+                case "i":
+                    imgPath = "i.jpg";
+                    break;
+                case "j":
+                    imgPath = "j.jpg";
+                    break;
+                case "k":
+                    imgPath = "k.jpg";
+                    break;
+                case "l":
+                    imgPath = "l.jpg";
+                    break;
+                case "m":
+                    imgPath = "m.jpg";
+                    break;
+                case "n":
+                    imgPath = "n.jpg";
+                    break;
+                case "o":
+                    imgPath = "o.jpg";
+                    break;
+                case "p":
+                    imgPath = "p.jpg";
+                    break;
+                case "q":
+                    imgPath = "q.jpg";
+                    break;
+                case "r":
+                    imgPath = "r.jpg";
+                    break;
+                case "s":
+                    imgPath = "s.jpg";
+                    break;
+                case "t":
+                    imgPath = "t.jpg";
+                    break;
+                case "u":
+                    imgPauh = "u.jpg";
+                    break;
+                case "u":
+                    imgPath = "u.jpg";
+                    break;
+                case "v":
+                    imgPath = "v.jpg";
+                    break;
+                case "w":
+                    imgPath = "w.jpg";
+                    break;
+                case "x":
+                    imgPath = "x.jpg";
+                    break;
+                case "y":
+                    imgPath = "y.jpg";
+                    break;
+                case "z":
+                    imgPath = "z.jpg";
+                    break;
+                default:
+                    imgPath = "default.jpg";
+            }
+            document.querySelector("#output").src = "img/" + imgPath
+        }
+
+        function playSound(x) {
+            let txt = x.toLowerCase();
+            let audioPath;
+            switch (txt) {
+                case 'a':
+                    audioPath = 'audio/A.wav';
+                    break;
+                case 'b':
+                    audioPath = 'audio/B.wav';
+                    break;
+                case 'c':
+                    audioPath = 'audio/C.wav';
+                    break;
+                case 'd':
+                    audioPath = 'audio/D.wav';
+                    break;
+                case 'e':
+                    audioPath = 'audio/E.wav';
+                    break;
+                case 'f':
+                    audioPath = 'audio/F.wav';
+                    break;
+                case 'g':
+                    audioPath = 'audio/G.wav';
+                    break;
+                case 'h':
+                    audioPath = 'audio/H.wav';
+                    break;
+                case 'i':
+                    audioPath = 'audio/I.wav';
+                    break;
+                case 'j':
+                    audioPath = 'audio/J.wav';
+                    break;
+                case 'k':
+                    audioPath = 'audio/K.wav';
+                    break;
+                case 'l':
+                    audioPath = 'audio/L.wav';
+                    break;
+                case 'm':
+                    audioPath = 'audio/M.wav';
+                    break;
+                case 'n':
+                    audioPath = 'audio/N.wav';
+                    break;
+                case 'o':
+                    audioPath = 'audio/O.wav';
+                    break;
+                case 'p':
+                    audioPath = 'audio/P.wav';
+                    break;
+                case 'q':
+                    audioPath = 'audio/Q.wav';
+                    break;
+                case 'r':
+                    audioPath = 'audio/R.wav';
+                    break;
+                case 's':
+                    audioPath = 'audio/S.wav';
+                    break;
+                case 't':
+                    audioPath = 'audio/T.wav';
+                    break;
+                case 'u':
+                    audioPath = 'audio/U.wav';
+                    break;
+                case 'v':
+                    audioPath = 'audio/V.wav';
+                    break;
+                case 'w':
+                    audioPath = 'audio/W.wav';
+                    break;
+                case 'x':
+                    audioPath = 'audio/X.wav';
+                    break;
+                case 'y':
+                    audioPath = 'audio/Y.wav';
+                    break;
+                case 'z':
+                    audioPath = 'audio/Z.wav';
+                    break;
+            }
+
+            // Play the sound
+            if (audioPath) {
+                var audio = new Audio(audioPath);
+                audio.play();
+            }
+        }
+    </script>
+
+</body>
+
+</html>
