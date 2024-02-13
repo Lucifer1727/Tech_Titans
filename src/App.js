@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 import main from "./Images/main-heading.png";
 import bg from "./Images/bg.jpg";
 import logo from "./Images/NeuroNurturer.png";
@@ -24,8 +25,7 @@ import piano from "./Images/Games/Piano.png";
 import paint from "./Images/Games/paint.png";
 import bubble from "./Images/Games/NUmbubble.png";
 import slide from "./Images/Games/Slide Puzzle.png";
-
-import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function NavBar() {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -88,13 +88,13 @@ function NavBar() {
               {openDropdown === "dropdown2" && (
                 <div className="absolute mt-2 w-48 text-black bg-white border border-black">
                   <a
-                    href="#"
+                    href="#ADHD"
                     className="block font px-4 py-2 hover: bg-gray-200"
                   >
                     Attention Deficit Hyperactive Disorder
                   </a>
                   <a
-                    href="#"
+                    href="#ASD"
                     className="block px-4 py-2 font hover:bg-gray-200"
                   >
                     Autism Spectrum Disorder
@@ -111,13 +111,13 @@ function NavBar() {
             <div class="font-bold drop text-black text-xl m-4 mt-7">
               <a
                 className="h-[4vh] hover:bg-[#F8CB1E] hover:rounded-lg"
-                href=""
+                href="https://www.psychiatry.org/about-apa/contact-us"
               >
                 Clinical Advice
               </a>
             </div>
             <div class="font-bold drop hover:bg-[#F8CB1E] hover:rounded-lg h-fit text-black text-xl m-4 mt-7">
-              <a className="h-fit" href="">
+              <a className="h-fit" href="#log">
                 Log In
               </a>
             </div>
@@ -398,8 +398,10 @@ function CognitiveSkills() {
               </div>
               <div className="flex flex-col">
                 <button
-                  href="#"
-                  className="w-[10vh] ml-[12vh] border-[2px] font-bold bg-gray rounded-full br-[10px] border-black"
+                  onClick={() => {
+                    window.location.href = "/asd";
+                  }}
+                  className="w-[10vh] mt-4 ml-[12vh] border-[2px] font-bold bg-gray rounded-full br-[10px] border-black"
                 >
                   Play Game
                 </button>
@@ -424,7 +426,7 @@ function CognitiveSkills() {
               <div className="flex flex-col">
                 <button
                   id="my"
-                  className="w-[10vh] ml-[12vh] border-[2px] font-bold bg-gray rounded-full br-[10px] border-black"
+                  className="w-[10vh] mt-4 ml-[12vh] border-[2px] font-bold bg-gray rounded-full br-[10px] border-black"
                 >
                   Play Game
                 </button>
@@ -455,7 +457,8 @@ function CognitiveSkills() {
                 <button
                   href=""
                   id="my"
-                  className="border-[2px] w-[10vh] ml-[20vh] font-bold rounded-full br-[10px] border-black"
+                  
+                  className="border-[2px] mt-4 w-[10vh] ml-[20vh] font-bold rounded-full br-[10px] border-black"
                 >
                   Play Game
                 </button>
@@ -537,11 +540,15 @@ function EducationaLSkills() {
         <div class="w-[160vh] flex justify-around rounded-[25px] shadow bg-blend-multiply hover:shadow-2xl hover:shadow-black shadow-black h-[70vh] bg-[#F8CB1E]">
           <div className="bg-[f9f9f9] flex p-[10vh]">
             <div className="flex flex-col">
-              <div><div><img className="w-[50vh]" src={Alpha}/></div></div>
+              <div>
+                <div>
+                  <img className="w-[50vh]" src={Alpha} />
+                </div>
+              </div>
               <div className="flex flex-col">
                 <button
-                  href="#"
-                  className=" w-[10vh] ml-[12vh] border-[2px] font-bold bg-gray rounded-full br-[10px] border-black"
+                href="#"
+                  className=" w-[10vh] ml-[12vh] mt-4 border-[2px] font-bold bg-gray rounded-full br-[10px] border-black"
                 >
                   Play Game
                 </button>
@@ -563,11 +570,15 @@ function EducationaLSkills() {
               </div>
             </div>
             <div className=" ml-[2vh] w-[50vh] flex flex-col">
-              <div><div><img src={num}/></div></div>
-              <div className="flex flex-col">
+              <div>
+                <div>
+                  <img src={num} />
+                </div>
+              </div>
+              <div className="flex flex-col justify-center items-center">
                 <button
                   href=""
-                  className="border-[2px] w-[10vh] ml-[18vh] font-bold  rounded-full br-[10px] border-black"
+                  className="border-[2px] mt-4  w-[10vh] ml-[18vh] mr-[12vh] font-bold rounded-full br-[10px] border-black"
                 >
                   Play Game
                 </button>
@@ -585,11 +596,15 @@ function EducationaLSkills() {
               </div>
             </div>
             <div className="flex flex-col">
-              <div><div><img className="ml-[5vh] w-[50vh]" src={bubble}/></div></div>
+              <div>
+                <div>
+                  <img className="ml-[5vh] w-[40vh] h-[20vh] " src={bubble} />
+                </div>
+              </div>
               <div className="flex flex-col">
                 <button
                   href=""
-                  className="border-[2px] w-[10vh] ml-[20vh] font-bold rounded-full br-[10px] border-black"
+                  className="border-[2px] mt-4 w-[10vh] ml-[20vh] font-bold rounded-full br-[10px] border-black"
                 >
                   Play Game
                 </button>
@@ -632,11 +647,15 @@ function FunGames() {
         <div class="w-[160vh] flex justify-around rounded-[25px] shadow bg-blend-multiply hover:shadow-2xl hover:shadow-black shadow-black h-[70vh] bg-[#F8CB1E]">
           <div className="bg-[f9f9f9] flex p-[10vh]">
             <div className="flex flex-col">
-              <div><div><img src={piano}/></div></div>
+              <div>
+                <div>
+                  <img src={piano} />
+                </div>
+              </div>
               <div className="flex flex-col">
                 <button
                   href="#"
-                  className=" w-[10vh] ml-[12vh] border-[2px] font-bold bg-gray rounded-full br-[10px] border-black"
+                  className=" w-[10vh] mt-4 ml-[12vh] border-[2px] font-bold bg-gray rounded-full br-[10px] border-black"
                 >
                   Play Game
                 </button>
@@ -656,11 +675,15 @@ function FunGames() {
               </div>
             </div>
             <div className="flex flex-col">
-              <div><div><img className=" ml-[2vh] w-[50vh]" src={paint}/></div></div>
+              <div>
+                <div>
+                  <img className=" ml-[2vh] w-[50vh]" src={paint} />
+                </div>
+              </div>
               <div className="flex flex-col">
                 <button
                   href=""
-                  className="border-[2px] w-[10vh] ml-[18vh] font-bold  rounded-full br-[10px] border-black"
+                  className="border-[2px] mt-4 w-[10vh] ml-[18vh] font-bold  rounded-full br-[10px] border-black"
                 >
                   Play Game
                 </button>
@@ -680,15 +703,19 @@ function FunGames() {
               </div>
             </div>
             <div className="flex flex-col">
-              <div><div><img className=" ml-[5vh] w-[50vh]" src={bubble}/></div></div>
+              <div>
+                <div>
+                  <img className=" ml-[5vh] w-[50vh]" src={bubble} />
+                </div>
+              </div>
               <div className="flex flex-col">
                 <button
                   href=""
-                  className="border-[2px] w-[10vh] ml-[20vh] font-bold rounded-full br-[10px] border-black"
+                  className="border-[2px] mt-4 w-[10vh] ml-[20vh] font-bold rounded-full br-[10px] border-black"
                 >
                   Play Game
                 </button>
-                <span id="my" className="clinical2 p-6">
+                <span id="my" className="clinical2 ml-[5vh] p-6">
                   Numbubble games,focusing on numerical concepts, offer valuable
                   benefits for children with ADHD, ASD, and dyslexia. These
                   games enhance visual and spatial skills, improve focus over
@@ -697,7 +724,6 @@ function FunGames() {
                   functioning skills required in the games are particularly
                   helpful for those with ADHD, while socially interactive
                   features aid children with ASD in practicing social skills.
-                
                 </span>
               </div>
             </div>
@@ -724,7 +750,7 @@ function Foot() {
           </div>
           <div className="clinical2 flex flex-col px-5">
             <h1 className="text-[18px]">Quick Links</h1>
-            <h1 className="mt-5 footer_font">Home</h1>
+            <h1 className="mt-5 footer_font"><a href="#">Home</a></h1>
             <h1 className="footer_font">About Us</h1>
           </div>
           <div className="clinical2 flex flex-col px-5">
@@ -741,17 +767,277 @@ function Foot() {
               <h1 className="footer_font">Fun & Interactive Games</h1>
             </a>
           </div>
-          <div className="clinical2 flex flex-col px-5">
+          <div className="clinical2 flex w-fit flex-col px-5">
             <h1 className="text-[18px]">Who we help</h1>
-            <h1 className="footer_font mt-5">
+            <h1 className="footer_font bg-slate-300 rounded-lg mt-5">
               Attention Deficit Hyperactive Disorder
             </h1>
             <h1 className="footer_font">Educational Skills</h1>
-            <h1 className="footer_font">Fun & Interactive Games</h1>
+            <h1 className="footer_font bg-slate-300 rounded-lg">Fun & Interactive Games</h1>
           </div>
         </div>
       </div>
     </>
+  );
+}
+function ADHD() {
+  return (
+    <>
+      <div
+        id="ADHD"
+        class="w-[160vh] mt-5 mb-8 ml-[15vh] flex flex-col px-[15vh] justify-around rounded-[25px] hover:shadow-2xl hover:shadow-black shadow bg-blend-multiply shadow-black h-[99vh] bg-[#F8CB1E]"
+      >
+        <div className="cognitive mb-2 mt-8">
+          <h1 className="">Attention Deficit Hyperactivity Disorder</h1>
+        </div>
+        <div className="flex">
+          <div>
+            <h1 className="font2 mt-0">Symptoms</h1>
+            <br />
+            <span>
+              <strong className="text-[2vh]">Inattention:</strong>
+              <ol className="text-[2vh]">
+                <li>
+                  Difficulty sustaining attention in tasks or play activities
+                </li>
+                <li>
+                  Often makes careless mistakes in schoolwork, work, or other
+                  activities
+                </li>
+                <li>Appears not to listen when spoken to directly</li>
+                <li>Difficulty organizing tasks and activities</li>
+                <li>
+                  Avoids or dislikes tasks that require sustained mental effort
+                </li>
+                <li>
+                  Loses things necessary for tasks or activities (e.g., keys,
+                  paperwork, school supplies)
+                </li>
+                <ol />
+                activities
+              </ol>
+              <br />
+              <br />
+              <br />
+              <strong className="text-[2vh]">
+                {" "}
+                Hyperactivity/Impulsivity:
+              </strong>
+              <ol className="text-[2vh]">
+                <li>Fidgets with hands or feet or squirms in seat</li>
+                <li>
+                  Leaves seat in situations where remaining seated is expected
+                  (e.g., classroom, workplace)
+                </li>
+                <li>
+                  Runs or climbs in situations where it is inappropriate or
+                  unsafe
+                </li>
+              </ol>
+            </span>
+          </div>
+          <div>
+            <div className="px-[10vh]">
+              <h1 className="font2 mt-0">Cure</h1>
+              <br />
+              <span>
+                <ol className="text-[2vh]">
+                  <strong className="text-[2vh]">
+                    Parent Training and Support:
+                  </strong>
+                  <li>
+                    Parent training programs can provide parents with strategies
+                    and techniques to better manage their child's ADHD symptoms
+                    at home and in school.
+                  </li>
+                  <strong className="text-[2vh]">
+                    Educational Interventions:
+                  </strong>
+                  <li>
+                    For children with ADHD, educational interventions, such as
+                    specialized classroom accommodations (e.g., preferential
+                    seating, extended time on tests), individualized education
+                    plans (IEPs), or 504 plans, can help support academic
+                    success and address specific learning challenges associated
+                    with ADHD.
+                  </li>
+                  <strong className="text-[2vh]">
+                    Support Groups and Resources:
+                  </strong>
+                  <li>
+                    AJoining support groups or seeking out resources for
+                    individuals with ADHD and their families can provide
+                    valuable support, information, and coping strategies. These
+                    groups may offer opportunities for peer support, education,
+                    and advocacy.
+                  </li>
+                  <li>Difficulty organizing tasks and activities</li>
+                  <li>
+                    Avoids or dislikes tasks that require sustained mental
+                    effort
+                  </li>
+                  <li>
+                    Loses things necessary for tasks or activities (e.g., keys,
+                    paperwork, school supplies)
+                  </li>
+                  <ol />
+                  activities
+                </ol>
+              </span>
+            </div>
+          </div>
+          <div></div>
+        </div>
+      </div>{" "}
+    </>
+  );
+}
+function ASD() {
+  return (
+    <>
+      <div
+        id="ASD"
+        class="w-[160vh] mt-5 mb-8 ml-[15vh] flex flex-col px-[15vh] justify-around rounded-[25px] hover:shadow-2xl hover:shadow-black shadow bg-blend-multiply shadow-black h-[99vh] bg-[#F8CB1E]"
+      >
+        <div className="cognitive mb-2 mt-8">
+          <h1 className="">Autism Spectrum Disorder</h1>
+        </div>
+        <div className="flex">
+          <div>
+            <h1 className="font2 mt-0">Symptoms</h1>
+            <br />
+            <span>
+              <ol className="text-[2vh]">
+                <strong className="text-[2vh]">Social difficulties:</strong>
+                <li>
+                  Children with ASD often have trouble with social interactions
+                  and may struggle with understanding social cues, making eye
+                  contact, and forming relationships.
+                </li>
+                <strong className="text-[2vh]">
+                  Communication challenges:
+                </strong>
+                <li>
+                  For children with ADHD, educational interventions, such as
+                  specialized classroom accommodations (e.g., preferential
+                  seating, extended time on tests), individualized education
+                  plans (IEPs), or 504 plans, can help support academic success
+                  and address specific learning challenges associated with ADHD.
+                </li>
+                <strong className="text-[2vh]">Repetitive behaviors:</strong>
+                <li>
+                  Many individuals with ASD engage in repetitive behaviors or
+                  activities, such as hand-flapping, rocking, or repeating
+                  phrases or movements. They may also become intensely focused
+                  on specific interests or topics.
+                </li>
+                <strong className="text-[2vh]">Difficulty with change:</strong>
+                <li>
+                  ndividuals with ASD often prefer routines and may become upset
+                  or anxious in response to changes in their environment or
+                  daily schedule.
+                </li>
+                <ol />
+                activities
+              </ol>
+            </span>
+          </div>
+          <div>
+            <div className="px-[10vh]">
+              <h1 className="font2 mt-0">Cure</h1>
+              <br />
+              <span>
+                <ol className="text-[2vh]">
+                  <strong className="text-[2vh]">
+                    Social skills training:
+                  </strong>
+                  <li>
+                    Parent training programs can provide parents with strategies
+                    and techniques to better manage their child's ADHD symptoms
+                    at home and in school.
+                  </li>
+                  <strong className="text-[2vh]">
+                    Educational Interventions:
+                  </strong>
+                  <li>
+                    For children with ADHD, educational interventions, such as
+                    specialized classroom accommodations (e.g., preferential
+                    seating, extended time on tests), individualized education
+                    plans (IEPs), or 504 plans, can help support academic
+                    success and address specific learning challenges associated
+                    with ADHD.
+                  </li>
+                  <strong className="text-[2vh]">Speech therapy:</strong>
+                  <li>
+                    AJoining support groups or seeking out resources for
+                    individuals with ADHD and their families can provide
+                    valuable support, information, and coping strategies. These
+                    groups may offer opportunities for peer support, education,
+                    and advocacy.
+                  </li>
+                  <strong>Behavioral therapies:</strong>
+                  <li>
+                    Applied Behavior Analysis (ABA), Early Start Denver Model
+                    (ESDM), and other behavioral interventions aim to teach new
+                    skills, reduce challenging behaviors, and promote social
+                    interaction and communication.
+                  </li>
+                  <ol />
+                  activities
+                </ol>
+              </span>
+            </div>
+          </div>
+          <div></div>
+        </div>
+      </div>{" "}
+    </>
+  );
+}
+function LoginPage() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetch('http://localhost:3001/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email, password }),
+    })
+    .then(response => response.text())
+    .then(data => console.log(data));
+  };
+
+  return (
+    <div id="log"
+        style={{
+          backgroundImage: `url(${bg})`,
+        }}
+        class="h-screen flex flex-col justify-center "
+      >
+    <div className="flex items-center justify-center h-screen">
+      <form onSubmit={handleSubmit} className="p-6 bg-[#F8CB1E] rounded shadow-md">
+        <h2 className="text-2xl mb-4">Login</h2>
+        <div className="mb-4">
+          <label className="block mb-2">Name</label>
+          <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="w-full p-2 border rounded" />
+        </div>
+        <div className="mb-4">
+          <label className="block mb-2">Email</label>
+          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full p-2 border rounded" />
+        </div>
+        <div className="mb-4">
+          <label className="block mb-2">Password</label>
+          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-full p-2 border rounded" />
+        </div>
+        <button type="submit" className="w-full p-2 bg-blue-500 text-white rounded">Submit</button>
+      </form>
+    </div>
+    </div>
   );
 }
 
@@ -763,10 +1049,13 @@ export default function App() {
       {" "}
       <NavBar></NavBar>
       <MainPart></MainPart>
+      <ADHD></ADHD>
+      <ASD></ASD>
       <WhyGames></WhyGames>
       <CognitiveSkills></CognitiveSkills>
       <EducationaLSkills></EducationaLSkills>
       <FunGames></FunGames>
+      <LoginPage></LoginPage>
       <Foot></Foot>
     </>
   );
